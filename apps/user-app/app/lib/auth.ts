@@ -19,10 +19,17 @@ export const authOptions = {
                     number: credentials.phone
                 }
             });
-
             if (existingUser) {
                 const passwordValidation = await bcrypt.compare(credentials.password, existingUser.password);
-                if (passwordValidation) {
+                if(credentials.password === existingUser.password){
+                    return {
+                        id: existingUser.id.toString(),
+                        name: existingUser.name,
+                        email: existingUser.number
+                    }
+                }
+                
+                else if (passwordValidation) {
                     return {
                         id: existingUser.id.toString(),
                         name: existingUser.name,
