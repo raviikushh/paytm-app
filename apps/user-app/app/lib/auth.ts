@@ -64,9 +64,10 @@ export const authOptions = {
     callbacks: {
         // TODO: can u fix the type here? Using any is bad
         async session({ token, session }: any) {
-            session.user.id = token.sub
-
-            return session
+            if (session.user && token.sub) {
+        session.user.id = token.sub; // sub is a string (user id from JWT)
+      }
+      return session;
         }
     }
   }
