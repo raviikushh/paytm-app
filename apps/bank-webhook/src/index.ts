@@ -99,7 +99,7 @@ app.post("/hdfcWebhook", async (req, res) => {
       });
     });
 
-    console.log("✅ Processed webhook for user", user_identifier);
+    // console.log("✅ Processed webhook for user", user_identifier);
     return res.json({ message: "Captured" });
   } catch (e) {
     console.error("❌ Error while processing webhook:", e);

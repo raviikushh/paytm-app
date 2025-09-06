@@ -51,6 +51,7 @@ export default async function() {
                 <div className="pt-4">
                     <OnRampTransactions transactions={transactions} />
                 </div>
+                
             </div>
         </div>
     </div>
